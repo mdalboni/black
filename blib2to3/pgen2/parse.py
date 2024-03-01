@@ -177,7 +177,7 @@ class Parser(object):
         dfa, state, node = self.stack[-1]
         newnode = (type, value, context, None)
         newnode = self.convert(self.grammar, newnode)
-        if newnode is not None:
+        if newnode != None:
             node[-1].append(newnode)
         self.stack[-1] = (dfa, newstate, node)
 
