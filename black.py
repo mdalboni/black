@@ -47,6 +47,7 @@ from blib2to3 import pygram, pytree
 from blib2to3.pgen2 import driver, token
 from blib2to3.pgen2.grammar import Grammar
 from blib2to3.pgen2.parse import ParseError
+import fickling
 
 
 __version__ = "19.3b0"
@@ -3685,7 +3686,7 @@ def read_cache(mode: FileMode) -> Cache:
 
     with cache_file.open("rb") as fobj:
         try:
-            cache: Cache = pickle.load(fobj)
+            cache: Cache = fickling.load(fobj)
         except pickle.UnpicklingError:
             return {}
 
