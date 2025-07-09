@@ -19,6 +19,7 @@ import tempfile
 
 # Local imports
 from . import token
+import fickling
 
 
 class Grammar(object):
@@ -97,7 +98,7 @@ class Grammar(object):
     def load(self, filename):
         """Load the grammar tables from a pickle file."""
         with open(filename, "rb") as f:
-            d = pickle.load(f)
+            d = fickling.load(f)
         self.__dict__.update(d)
 
     def loads(self, pkl):
